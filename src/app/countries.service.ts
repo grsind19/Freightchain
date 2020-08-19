@@ -19,7 +19,7 @@ export class CountriesService {
       })
     };
   }
-
+  
   getCountries(){
     return this.http.get(this.baseUrl + '/md/country/list', this.httpOptions);
   }

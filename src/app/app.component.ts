@@ -29,7 +29,7 @@ export class AppComponent implements OnInit{
     this.countryService.addCountry(this.country).subscribe(data => {
       if (data){
         this.countries.push(country);
-        this.country = {code:'', name:''}
+        this.resetCountry()
       }
     });
   }
@@ -42,6 +42,9 @@ export class AppComponent implements OnInit{
         console.log("success")
       }
     });
+  }
+  resetCountry(){
+    this.country = {code:'', name:''}
   }
   deleteCountry(country){
     this.countryService.deleteCountry(country).subscribe(data => {
